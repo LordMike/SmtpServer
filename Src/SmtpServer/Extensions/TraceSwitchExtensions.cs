@@ -17,7 +17,7 @@ namespace SmtpServer
             {
                 throw new ArgumentNullException(nameof(traceSwitch));
             }
-
+            
             Trace.WriteLineIf(traceSwitch.TraceError, String.Format(format, args));
         }
 

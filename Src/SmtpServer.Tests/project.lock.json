@@ -1,0 +1,140 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "System.Runtime/4.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "xunit/1.9.0.1566": {
+        "type": "package",
+        "compile": {
+          "lib/xunit.dll": {}
+        },
+        "runtime": {
+          "lib/xunit.dll": {}
+        }
+      },
+      "xunit.extensions/1.9.0.1566": {
+        "type": "package",
+        "dependencies": {
+          "xunit": "1.9.0.1566"
+        },
+        "compile": {
+          "lib/xunit.extensions.dll": {}
+        },
+        "runtime": {
+          "lib/xunit.extensions.dll": {}
+        }
+      },
+      "SmtpServer/1.6.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "compile": {
+          "net45/SmtpServer.dll": {}
+        },
+        "runtime": {
+          "net45/SmtpServer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "System.Runtime/4.0.0": {
+      "sha512": "Uq9epame8hEqJlj4KaWb67dDJvj4IM37jRFGVeFbugRdPz48bR0voyBhrbf3iSa2tAmlkg4lsa6BUOL9iwlMew==",
+      "type": "package",
+      "path": "System.Runtime/4.0.0",
+      "files": [
+        "License.rtf",
+        "System.Runtime.4.0.0.nupkg.sha512",
+        "System.Runtime.nuspec",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/dotnet/System.Runtime.dll",
+        "ref/dotnet/System.Runtime.xml",
+        "ref/dotnet/de/System.Runtime.xml",
+        "ref/dotnet/es/System.Runtime.xml",
+        "ref/dotnet/fr/System.Runtime.xml",
+        "ref/dotnet/it/System.Runtime.xml",
+        "ref/dotnet/ja/System.Runtime.xml",
+        "ref/dotnet/ko/System.Runtime.xml",
+        "ref/dotnet/ru/System.Runtime.xml",
+        "ref/dotnet/zh-hans/System.Runtime.xml",
+        "ref/dotnet/zh-hant/System.Runtime.xml",
+        "ref/net45/_._",
+        "ref/netcore50/System.Runtime.dll",
+        "ref/netcore50/System.Runtime.xml",
+        "ref/netcore50/de/System.Runtime.xml",
+        "ref/netcore50/es/System.Runtime.xml",
+        "ref/netcore50/fr/System.Runtime.xml",
+        "ref/netcore50/it/System.Runtime.xml",
+        "ref/netcore50/ja/System.Runtime.xml",
+        "ref/netcore50/ko/System.Runtime.xml",
+        "ref/netcore50/ru/System.Runtime.xml",
+        "ref/netcore50/zh-hans/System.Runtime.xml",
+        "ref/netcore50/zh-hant/System.Runtime.xml",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._"
+      ]
+    },
+    "xunit/1.9.0.1566": {
+      "sha512": "gTB3hsr/9WdQdwv+4B7I0GzJq2XYiJXI71LV+j/KITieLxzF9vRj2o3nN0BtmFUYo/TIQ5uU9e3DByfzn/YjnQ==",
+      "type": "package",
+      "path": "xunit/1.9.0.1566",
+      "files": [
+        "lib/xunit.dll",
+        "lib/xunit.dll.tdnet",
+        "lib/xunit.runner.msbuild.dll",
+        "lib/xunit.runner.tdnet.dll",
+        "lib/xunit.runner.utility.dll",
+        "lib/xunit.xml",
+        "xunit.1.9.0.1566.nupkg.sha512",
+        "xunit.nuspec"
+      ]
+    },
+    "xunit.extensions/1.9.0.1566": {
+      "sha512": "N26UNtrHDtLnBPisIMnEqPLajRzfX2koLjaRCOXl0bf1rBglsxxy/6Nj+YlAIvnf+5j0NfW+m2vxOrzSVcXI+Q==",
+      "type": "package",
+      "path": "xunit.extensions/1.9.0.1566",
+      "files": [
+        "lib/xunit.extensions.dll",
+        "lib/xunit.extensions.xml",
+        "xunit.extensions.1.9.0.1566.nupkg.sha512",
+        "xunit.extensions.nuspec"
+      ]
+    },
+    "SmtpServer/1.6.0": {
+      "type": "project",
+      "path": "../SmtpServer/project.json",
+      "msbuildProject": "../SmtpServer/SmtpServer.xproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "SmtpServer >= 1.6.0",
+      "System.Runtime >= 4.0.0",
+      "xunit >= 1.9.0",
+      "xunit.extensions >= 1.9.0"
+    ],
+    ".NETFramework,Version=v4.5": []
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
+}

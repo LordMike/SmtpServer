@@ -1,0 +1,33 @@
+{
+  "locked": false,
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "SmtpServer/1.6.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "compile": {
+          "net45/SmtpServer.dll": {}
+        },
+        "runtime": {
+          "net45/SmtpServer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SmtpServer/1.6.0": {
+      "type": "project",
+      "path": "../SmtpServer/project.json",
+      "msbuildProject": "../SmtpServer/SmtpServer.xproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "SmtpServer >= 1.0.0-*"
+    ],
+    ".NETFramework,Version=v4.5": []
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
+}

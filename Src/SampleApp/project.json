@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "emitEntryPoint": true
+  },
+
+  "dependencies": {
+    "SmtpServer": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "net45": {
+
+    }
+  }
+}

@@ -1,4 +1,6 @@
-﻿using System.Net.Sockets;
+﻿using System;
+using System.Net.Sockets;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using SmtpServer.Protocol;
@@ -6,7 +8,7 @@ using SmtpServer.Protocol.Text;
 
 namespace SmtpServer
 {
-    internal sealed class SmtpSession
+    internal sealed class SmtpSession : IDisposable
     {
         readonly ISmtpServerOptions _options;
         readonly TcpClient _tcpClient;
@@ -42,18 +44,17 @@ namespace SmtpServer
 
             RunAsync(cancellationToken)
                 .ContinueWith(t =>
-                {
-                    try
                     {
-                        _tcpClient.Close();
-                        _taskCompletionSource.SetResult(t.IsCompleted);
-                    }
-                    catch
-                    {
-                        _taskCompletionSource.SetResult(false);
-                    }
-                }, 
-                cancellationToken);
+                        try
+                        {
+                            _taskCompletionSource.SetResult(t.IsCompleted);
+                        }
+                        catch
+                        {
+                            _taskCompletionSource.SetResult(false);
+                        }
+                    },
+                    cancellationToken);
         }
 
         /// <summary>
@@ -70,13 +71,16 @@ namespace SmtpServer
 
             await OutputGreetingAsync(cancellationToken).ConfigureAwait(false);
 
-            while (_retryCount-- > 0 && Context.IsQuitRequested == false && cancellationToken.IsCancellationRequested == false)
+            while (_retryCount-- > 0 && Context.IsQuitRequested == false &&
+                   cancellationToken.IsCancellationRequested == false)
             {
                 var text = await Context.Text.ReadLineAsync(cancellationToken).ConfigureAwait(false);
 
                 SmtpCommand command;
                 SmtpResponse errorResponse;
-                if (_stateMachine.TryAccept(new TokenEnumerator(new StringTokenReader(text)), out command, out errorResponse) == false)
+                if (
+                    _stateMachine.TryAccept(new TokenEnumerator(new StringTokenReader(text)), out command, out errorResponse) ==
+                    false)
                 {
                     await OuputErrorMessageAsync(errorResponse, cancellationToken).ConfigureAwait(false);
                     continue;
@@ -96,9 +100,11 @@ namespace SmtpServer
         /// <returns>A task which performs the operation.</returns>
         async Task OutputGreetingAsync(CancellationToken cancellationToken)
         {
-            var version = typeof(SmtpSession).Assembly.GetName().Version;
+            var version = typeof(SmtpServer).GetTypeInfo().Assembly.GetName().Version;
 
-            await Context.Text.WriteLineAsync($"220 {_options.ServerName} v{version} ESMTP ready", cancellationToken).ConfigureAwait(false);
+            await
+                Context.Text.WriteLineAsync($"220 {_options.ServerName} v{version} ESMTP ready", cancellationToken)
+                    .ConfigureAwait(false);
             await Context.Text.FlushAsync(cancellationToken).ConfigureAwait(false);
         }
 
@@ -110,7 +116,8 @@ namespace SmtpServer
         /// <returns>A task which performs the operation.</returns>
         Task OuputErrorMessageAsync(SmtpResponse errorResponse, CancellationToken cancellationToken)
         {
-            var response = new SmtpResponse(errorResponse.ReplyCode, $"{errorResponse.Message}, {_retryCount} retry(ies) remaining.");
+            var response = new SmtpResponse(errorResponse.ReplyCode,
+                $"{errorResponse.Message}, {_retryCount} retry(ies) remaining.");
 
             return Context.Text.ReplyAsync(response, cancellationToken);
         }
@@ -119,13 +126,18 @@ namespace SmtpServer
         /// Returns the context for the session.
         /// </summary>
         internal SmtpSessionContext Context { get; }
-        
+
         /// <summary>
         /// Returns the completion task.
         /// </summary>
         internal Task<bool> Task
         {
             get { return _taskCompletionSource.Task; }
+        }
+
+        public void Dispose()
+        {
+            ((IDisposable)_tcpClient).Dispose();
         }
     }
 }

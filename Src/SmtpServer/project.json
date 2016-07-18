@@ -1,0 +1,41 @@
+﻿{
+  "version": "1.6.0",
+  "authors": [ "Cain O'Sullivan" ],
+  "description": ".NET SmtpServer",
+  "copyright": "Copyright 2016",
+  "title": "SmtpServer",
+
+  "packOptions": {
+    "owners": [ "Cain O'Sullivan" ],
+    "projectUrl": "https://github.com/cosullivan/SmtpServer",
+    "requireLicenseAcceptance": false,
+    "tags": [ "Smtp", "SmtpServer" ]
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0",
+        "System.Net.Security": "4.0.0",
+        "System.Diagnostics.TraceSource": "4.0.0"
+      }
+    },
+    "netcoreapp1.0": {
+      "imports": "dnxcore50",
+      "dependencies": {
+        "NETStandard.Library": "1.6.0",
+        "System.Net.Security": "4.0.0",
+        "System.Diagnostics.TraceSource": "4.0.0"
+      }
+    },
+    "net45": {},
+    "net451": {},
+    "net452": {},
+    "net46": {
+      "dependencies": {
+        "System.Diagnostics.TraceSource": "4.0.0"
+      }
+    }
+  }
+}

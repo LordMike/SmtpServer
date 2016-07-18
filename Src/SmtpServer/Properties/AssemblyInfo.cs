@@ -1,18 +1,6 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("SmtpServer")]
-[assembly: AssemblyDescription(".NET SmtpServer")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Cain O'Sullivan")]
-[assembly: AssemblyProduct("SmtpServer")]
-[assembly: AssemblyCopyright("Copyright © 2016")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
 #if DEBUG
 [assembly: InternalsVisibleTo("SmtpServer.Tests")]
 //[assembly: InternalsVisibleTo("SmtpServer.Tests,PublicKey=" +
@@ -30,17 +18,3 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("00aedbfc-13a6-44ec-89e5-57b12f39372d")]
-
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.6.0")]
-[assembly: AssemblyFileVersion("1.6.0")]
-[assembly: AssemblyInformationalVersion("1.6.0")]

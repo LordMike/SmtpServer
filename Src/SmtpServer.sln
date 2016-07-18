@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmtpServer", "SmtpServer\SmtpServer.csproj", "{7DD2E2FD-592E-441C-A204-5D898BFDE8CA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmtpServer.Tests", "SmtpServer.Tests\SmtpServer.Tests.csproj", "{72A9962D-1B98-4E56-906E-43A26DD69B1D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{A965DCEA-280B-447A-B5C5-4089C444C2B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "SampleApp\SampleApp.csproj", "{403298B4-15C3-4409-99C9-0FE3EC731D63}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SmtpServer.Tests", "SmtpServer.Tests\SmtpServer.Tests.xproj", "{D6788D68-6C08-490D-B057-97B744A92D6F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SmtpServer", "SmtpServer\SmtpServer.xproj", "{B4271883-602C-459F-9FF3-8F9661213049}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleApp", "SampleApp\SampleApp.xproj", "{5224F535-11CF-4A4D-A32E-840848B70806}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +17,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{7DD2E2FD-592E-441C-A204-5D898BFDE8CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7DD2E2FD-592E-441C-A204-5D898BFDE8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7DD2E2FD-592E-441C-A204-5D898BFDE8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7DD2E2FD-592E-441C-A204-5D898BFDE8CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72A9962D-1B98-4E56-906E-43A26DD69B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72A9962D-1B98-4E56-906E-43A26DD69B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72A9962D-1B98-4E56-906E-43A26DD69B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{403298B4-15C3-4409-99C9-0FE3EC731D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{403298B4-15C3-4409-99C9-0FE3EC731D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{403298B4-15C3-4409-99C9-0FE3EC731D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{403298B4-15C3-4409-99C9-0FE3EC731D63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6788D68-6C08-490D-B057-97B744A92D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6788D68-6C08-490D-B057-97B744A92D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6788D68-6C08-490D-B057-97B744A92D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6788D68-6C08-490D-B057-97B744A92D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4271883-602C-459F-9FF3-8F9661213049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4271883-602C-459F-9FF3-8F9661213049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4271883-602C-459F-9FF3-8F9661213049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4271883-602C-459F-9FF3-8F9661213049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5224F535-11CF-4A4D-A32E-840848B70806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5224F535-11CF-4A4D-A32E-840848B70806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5224F535-11CF-4A4D-A32E-840848B70806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5224F535-11CF-4A4D-A32E-840848B70806}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{403298B4-15C3-4409-99C9-0FE3EC731D63} = {A965DCEA-280B-447A-B5C5-4089C444C2B7}
+		{5224F535-11CF-4A4D-A32E-840848B70806} = {A965DCEA-280B-447A-B5C5-4089C444C2B7}
 	EndGlobalSection
 EndGlobal
